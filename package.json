@@ -26,6 +26,7 @@
     "metalsmith-assets": "^0.1.0",
     "metalsmith-browser-sync": "^1.1.1",
     "metalsmith-collections": "^0.9.0",
+    "metalsmith-convert": "^0.3.5",
     "metalsmith-feed": "^0.2.0",
     "metalsmith-html-minifier": "^2.2.0",
     "metalsmith-in-place": "^2.0.1",
@@ -34,6 +35,6 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-publish": "^0.1.5",
-    "metalsmith-word-count": "0.0.4"
+    "metalsmith-word-count": "0.0.4",
   }
 }
