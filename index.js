@@ -13,11 +13,12 @@ Metalsmith(__dirname)
 })
 .source('./src')
 .destination('./docs')
-.clean(false)
+.clean(true)
 .use(markdown())
 .use(permalinks())
 .use(layouts({
-  engine: 'handlebars'
+  engine: 'handlebars',
+  partials: 'partials'
 }))
 .build(function(err, files){
   if (err) { throw err; }
