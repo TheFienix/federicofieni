@@ -1,7 +1,8 @@
 var Metalsmith  = require('metalsmith'),
 markdown    = require('metalsmith-markdown'),
 layouts     = require('metalsmith-layouts'),
-permalinks  = require('metalsmith-permalinks');
+permalinks  = require('metalsmith-permalinks'),
+drafts      = require('metalsmith-drafts');
 
 
 Metalsmith(__dirname)
@@ -11,7 +12,7 @@ Metalsmith(__dirname)
   generator:      "Metalsmith",
   url:            "http://www.federicofieni.com"
 })
-.source('./src')
+.source('./src') // already defaults to ./src
 .destination('./docs')
 .clean(true)
 .use(markdown())
