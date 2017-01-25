@@ -17,14 +17,21 @@ Metalsmith(__dirname)
 .destination('./docs')
 .clean(true)
 .use(markdown())
-.use(permalinks())
+.use(permalinks({
+  pattern: 'illustrations/:title',
+  date: 'YYYY/MM/DD',
+  // linksets: [{
+  //   match: {collection: 'illustrations'},
+  //   pattern: '/illustrations/:date/:title'
+  // }]
+}))
 .use(layouts({
   engine: 'handlebars',
   partials: 'partials'
 }))
 .use(writemetadata({
   pattern: ['**/*'],
-  ignorekeys: ['next','previous'],
+  // ignorekeys: ['next','previous'],
   bufferencoding: 'utf8'
 }))
 .build(function(err, files){
