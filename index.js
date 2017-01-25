@@ -4,7 +4,8 @@ layouts         = require('metalsmith-layouts'),
 permalinks      = require('metalsmith-permalinks'),
 drafts          = require('metalsmith-drafts'),
 writemetadata   = require('metalsmith-writemetadata'),
-debug           = require('metalsmith-debug');
+debug           = require('metalsmith-debug'),
+collections     = require('metalsmith-collections');
 
 Metalsmith(__dirname)
 .metadata({
@@ -16,6 +17,17 @@ Metalsmith(__dirname)
 .source('./src') // already defaults to ./src
 .destination('./docs')
 .clean(true)
+.use(collections({
+  illustrations: {
+    pattern: 'illustrations/*.md',
+    sortBy: 'date',
+    reverse: true,
+    metadata: {
+      name: 'Illustrations',
+      description: 'Latest digital painting works.'
+    }
+  }
+}))
 .use(markdown())
 .use(permalinks({
   pattern: 'illustrations/:title',

@@ -1,7 +1,7 @@
 ---
 title: Paul and Nina
 date: 2017-01-24
-layout: pic.html
+layout: illustration.html
 image: paul
 ---
 

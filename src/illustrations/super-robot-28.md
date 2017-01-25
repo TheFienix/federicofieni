@@ -1,7 +1,7 @@
 ---
 title: Super Robot 28
 date: 2016-08-20
-layout: pic.html
+layout: illustration.html
 image: SuperRobot28
 ---
 

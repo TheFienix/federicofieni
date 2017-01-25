@@ -16,6 +16,9 @@
 
   {{ contents }}
 
+  {{#each illustrations }}
+    <img src="/img/{{ image }}.jpg" alt="{{image}}">
+  {{/each}}
   {{> footer }}
 </body>
 </html>
