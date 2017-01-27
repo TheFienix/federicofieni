@@ -24,6 +24,7 @@
     "autoprefixer": "^6.7.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.3.0",
+    "gulp-sourcemaps": "^2.4.0",
     "handlebars": "^4.0.6",
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
