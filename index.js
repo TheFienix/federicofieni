@@ -1,4 +1,5 @@
 var Metalsmith  = require('metalsmith'),
+metalsmithConf = require('./metalsmith.conf'),
 markdown        = require('metalsmith-markdown'),
 layouts         = require('metalsmith-layouts'),
 permalinks      = require('metalsmith-permalinks'),
@@ -7,53 +8,19 @@ writemetadata   = require('metalsmith-writemetadata'),
 debug           = require('metalsmith-debug'),
 collections     = require('metalsmith-collections');
 
+
 Metalsmith(__dirname)
-.metadata({
-  title:          "Federico Fieni - Digital illustrator",
-  description:    "Art portfolio",
-  generator:      "Metalsmith",
-  url:            "http://www.federicofieni.com"
-})
+.metadata(metalsmithConf.metadata)
 .source('./src') // already defaults to ./src
+// .ignore('css')
 .destination('./docs')
 .clean(true)
-.use(collections({
-  illustrations: {
-    pattern: 'illustrations/*.md',
-    sortBy: 'date',
-    reverse: true,
-    metadata: {
-      name: 'Illustrations',
-      description: 'Latest digital painting works.'
-    }
-  }
-}))
+.use(collections(metalsmithConf.collections))
+.use(permalinks(metalsmithConf.permalinks))
+.use(layouts(metalsmithConf.layouts))
 .use(markdown())
-.use(permalinks({
-  pattern: 'illustrations/:title',
-  date: 'YYYY/MM/DD',
-  // linksets: [{
-  //   match: {collection: 'illustrations'},
-  //   pattern: '/illustrations/:date/:title'
-  // }]
-}))
-.use(layouts({
-  engine: 'handlebars',
-  partials: 'partials'
-}))
-.use(writemetadata({
-  pattern: ['**/*'],
-  // ignorekeys: ['next','previous'],
-  bufferencoding: 'utf8'
-}))
-.use(debug({ // Use setting up an environment variable DEBUG=metalsmith:*
-  log: "first debug",      // any comment you like
-  metadata: false,         // default: true
-  source: false,           // default: true
-  destination: false,      // default: true
-  files: true,             // default: true
-  match: "**/*.md"         // default: all files
-}))
+.use(writemetadata(metalsmithConf.writemetadata))
+.use(debug(metalsmithConf.debug))
 .build(function(err, files){
   if (err) { throw err; }
 });
