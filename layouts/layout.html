@@ -1,23 +1,11 @@
-<!doctype html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
-</head>
+{{> head }}
 <body>
-  <header>
-    <p>
-      <a href="/">Home</a>
-    </p>
-  </header>
+  {{> header }}
   <h1>{{ title }}</h1>
-  <p>{{ description }}</p>
-
-  {{ contents }}
+  <p>{{ contents }}</p>
 
   {{#each illustrations }}
-    <img src="/img/{{ image }}.jpg" alt="{{image}}">
+  <img src="/img/{{ image }}.jpg" alt="{{image}}">
   {{/each}}
   {{> footer }}
 </body>
