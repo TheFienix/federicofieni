@@ -41,11 +41,7 @@ gulp.task('metalsmith',['clean'], function(done){
   // .metadata(metalsmithConf.metadata)
   // .use(collections(metalsmithConf.collections))
   // .use(permalinks(metalsmithConf.permalinks))
-  .use(layouts({
-    directory: 'layouts',
-    engine: 'handlebars',
-    partials: 'partials'
-  }))
+  .use(layouts(metalsmithConf.layouts))
   .use(markdown())
   // .use(writemetadata(metalsmithConf.writemetadata))
   // .use(debug(metalsmithConf.debug))
