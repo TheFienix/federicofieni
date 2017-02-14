@@ -16,6 +16,35 @@ var metalsmithConf = {
       }
     }
   },
+  images: {
+    pattern: '**/*.md'
+  },
+  sharp: [{
+    namingPattern:'{dir}{name}-large{ext}',
+    methods: [
+      {
+        name: 'resize',
+        args: [ null, 1200 ]
+      }
+    ]
+  },
+  {
+    namingPattern:'{dir}{name}-medium{ext}',
+    methods: [
+      {
+        name: 'resize',
+        args: [ null, 800 ]
+      }
+    ]
+  },{
+    namingPattern:'{dir}{name}-small{ext}',
+    methods: [
+      {
+        name: 'resize',
+        args: [ null, 600 ]
+      }
+    ]
+  }],
   permalinks: {
     pattern: 'illustrations/:title',
     date: 'YYYY/MM/DD',
