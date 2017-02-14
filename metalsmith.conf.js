@@ -60,7 +60,7 @@ var metalsmithConf = {
   },
   writemetadata: {
     pattern: ['**/*'],
-    // ignorekeys: ['next','previous'],
+    ignorekeys: ['next','previous'],
     // bufferencoding: 'utf8'
   },
   debug: { // Use setting up an environment variable DEBUG=metalsmith:*
