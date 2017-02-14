@@ -2,10 +2,13 @@
 <body>
   {{> header }}
   <h1>{{ title }}</h1>
-  <p>{{ contents }}</p>
+
+  <p>{{ content }}</p>
 
   {{#each illustrations }}
-  <img src="/img/{{ image }}.jpg" alt="{{image}}">
+  {{#each this.images}}
+  <img src="{{this}}" alt="{{../this.title}}">
+  {{/each}}
   {{/each}}
   {{> footer }}
 </body>
