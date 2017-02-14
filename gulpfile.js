@@ -1,4 +1,5 @@
 var
+assign          = require('lodash.assign'),
 browserSync     = require('browser-sync').create(),
 collections     = require('metalsmith-collections'),
 concat          = require('gulp-concat'),
@@ -10,8 +11,8 @@ drafts          = require('metalsmith-drafts'),
 fingerprint     = require('gulp-fingerprint'),
 gulp            = require('gulp'),
 gulpFrontMatter = require('gulp-front-matter'),
-assign          = require('lodash.assign'),
 gulpsmith       = require('gulpsmith'),
+images          = require('metalsmith-project-images'),
 layouts         = require('metalsmith-layouts'),
 markdown        = require('metalsmith-markdown'),
 metalsmith      = require('gulp-metalsmith'),
@@ -43,7 +44,7 @@ gulp.task('metalsmith',['clean'], function(done){
   // .use(permalinks(metalsmithConf.permalinks))
   .use(layouts(metalsmithConf.layouts))
   .use(markdown())
-  // .use(writemetadata(metalsmithConf.writemetadata))
+  .use(writemetadata(metalsmithConf.writemetadata))
   // .use(debug(metalsmithConf.debug))
 ).pipe(gulp.dest('./docs'));
 // .on('end',done);
