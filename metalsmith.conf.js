@@ -7,7 +7,7 @@ var metalsmithConf = {
   },
   collections: {
     illustrations: {
-      pattern: 'illustrations/*.md',
+      pattern: 'illustrations/**/*.md',
       sortBy: 'date',
       reverse: true,
       metadata: {
