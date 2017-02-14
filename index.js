@@ -1,26 +1,34 @@
-var Metalsmith  = require('metalsmith'),
-metalsmithConf = require('./metalsmith.conf'),
-markdown        = require('metalsmith-markdown'),
-layouts         = require('metalsmith-layouts'),
-permalinks      = require('metalsmith-permalinks'),
-drafts          = require('metalsmith-drafts'),
-writemetadata   = require('metalsmith-writemetadata'),
+var
+adaptiveImages  = require('metalsmith-adaptive-images'),
+collections     = require('metalsmith-collections'),
+conf            = require('./metalsmith.conf'),
 debug           = require('metalsmith-debug'),
-collections     = require('metalsmith-collections');
+drafts          = require('metalsmith-drafts'),
+images          = require('metalsmith-project-images'),
+imagemin        = require('metalsmith-imagemin'),
+layouts         = require('metalsmith-layouts'),
+markdown        = require('metalsmith-markdown'),
+Metalsmith      = require('metalsmith'),
+permalinks      = require('metalsmith-permalinks'),
+sharp           = require('metalsmith-sharp'),
+writemetadata   = require('metalsmith-writemetadata')
+;
 
 
 Metalsmith(__dirname)
-.metadata(metalsmithConf.metadata)
+.metadata(conf.metadata)
 .source('./src') // already defaults to ./src
 // .ignore('css')
 .destination('./docs')
 .clean(true)
-.use(collections(metalsmithConf.collections))
-.use(permalinks(metalsmithConf.permalinks))
-.use(layouts(metalsmithConf.layouts))
+.use(collections(conf.collections))
+.use(sharp(conf.sharp))
+.use(images(conf.images))
+.use(permalinks(conf.permalinks))
 .use(markdown())
-.use(writemetadata(metalsmithConf.writemetadata))
-.use(debug(metalsmithConf.debug))
+.use(layouts(conf.layouts))
+// .use(writemetadata(conf.writemetadata))
+.use(debug(conf.debug))
 .build(function(err, files){
   if (err) { throw err; }
 });
