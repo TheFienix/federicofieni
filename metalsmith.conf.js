@@ -25,6 +25,15 @@ var metalsmithConf = {
       {
         name: 'resize',
         args: [ null, 1200 ]
+      },
+      {
+        name: 'overlayWith',
+        args: [
+          './img/L.png',
+          {
+            gravity: "northeast"
+          }
+        ]
       }
     ]
   },
@@ -34,6 +43,15 @@ var metalsmithConf = {
       {
         name: 'resize',
         args: [ null, 800 ]
+      },
+      {
+        name: 'overlayWith',
+        args: [
+          './img/M.png',
+          {
+            gravity: "northeast"
+          }
+        ]
       }
     ]
   },{
@@ -42,6 +60,15 @@ var metalsmithConf = {
       {
         name: 'resize',
         args: [ null, 600 ]
+      },
+      {
+        name: 'overlayWith',
+        args: [
+          './img/S.png',
+          {
+            gravity: "northeast"
+          }
+        ]
       }
     ]
   }],
