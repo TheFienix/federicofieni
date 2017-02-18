@@ -31,7 +31,8 @@ var metalsmithConf = {
         args: [
           './img/L.png',
           {
-            gravity: "northeast"
+            top: 10,
+            left: 10,
           }
         ]
       }
@@ -49,7 +50,8 @@ var metalsmithConf = {
         args: [
           './img/M.png',
           {
-            gravity: "northeast"
+            top: 10,
+            left: 10,
           }
         ]
       }
@@ -59,14 +61,15 @@ var metalsmithConf = {
     methods: [
       {
         name: 'resize',
-        args: [ null, 600 ]
+        args: [ null, 500 ]
       },
       {
         name: 'overlayWith',
         args: [
           './img/S.png',
           {
-            gravity: "northeast"
+            top: 10,
+            left: 10,
           }
         ]
       }
