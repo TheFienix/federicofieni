@@ -2,4 +2,7 @@ node_modules/
 bower_componentsnode_modules/
 bower_components/
 docs/
-src/**/*.{jpg,png,gif}
+src/**/*.jpg
+src/**/*.jpeg
+src/**/*.gif
+src/**/*.png
