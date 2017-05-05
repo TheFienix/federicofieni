@@ -26,31 +26,6 @@ sourcemaps      = require('gulp-sourcemaps'),
 writemetadata   = require('metalsmith-writemetadata')
 ;
 
-gulp.task('clean',function(){
-  del('docs/**');
-});
-
-gulp.task('metalsmith',['clean'], function(done){
-  return gulp.src('./src/**/*')
-
-  .pipe(gulpFrontMatter().on("data",function(file){
-    assign(file, file.frontMatter);
-    delete file.frontMatter;
-  }))
-
-  .pipe(gulpsmith()
-  // .metadata(metalsmithConf.metadata)
-  // .use(collections(metalsmithConf.collections))
-  // .use(permalinks(metalsmithConf.permalinks))
-  .use(layouts(metalsmithConf.layouts))
-  .use(markdown())
-  .use(writemetadata(metalsmithConf.writemetadata))
-  // .use(debug(metalsmithConf.debug))
-).pipe(gulp.dest('./docs'));
-// .on('end',done);
-});
-
-
 gulp.task('css',function () {
 
   var plugins = [
@@ -93,4 +68,4 @@ gulp.task('serve',function(){
 
 });
 
-gulp.task('default',['metalsmith']);
+gulp.task('default',['serve']);
