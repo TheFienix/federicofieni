@@ -6,8 +6,13 @@
   <p>{{ content }}</p>
 
   {{#each illustrations }}
-  {{#each this.images}}
-  <img src="{{this}}" alt="{{../this.title}}">
+  {{#each this.imagesMap as |image imageKey|}}
+  <img
+  alt="{{../this.title}}"
+  src="{{imageKey}}"
+  srcset="{{image.srcset}}"
+  sizes="{{image.sizes}}"
+  >
   {{/each}}
   {{/each}}
   {{> footer }}

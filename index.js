@@ -1,5 +1,5 @@
 var
-adaptiveImages  = require('metalsmith-adaptive-images'),
+AdaptiveImages  = require('metalsmith-adaptive-images'),
 collections     = require('metalsmith-collections'),
 conf            = require('./metalsmith.conf'),
 debug           = require('metalsmith-debug'),
@@ -14,6 +14,7 @@ sharp           = require('metalsmith-sharp'),
 writemetadata   = require('metalsmith-writemetadata')
 ;
 
+adaptiveImages = AdaptiveImages(conf.adaptiveImages);
 
 Metalsmith(__dirname)
 .metadata(conf.metadata)
@@ -25,6 +26,7 @@ Metalsmith(__dirname)
 .use(sharp(conf.sharp))
 .use(images(conf.images))
 .use(permalinks(conf.permalinks))
+.use(adaptiveImages.processImages)
 .use(markdown())
 .use(layouts(conf.layouts))
 // .use(writemetadata(conf.writemetadata))

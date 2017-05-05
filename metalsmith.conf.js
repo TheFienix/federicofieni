@@ -19,8 +19,19 @@ var metalsmithConf = {
   images: {
     pattern: '**/*.md'
   },
+  adaptiveImages: {
+    imagesKey: 'images',
+    mapKey: 'imagesMap',
+    imageWidths: [1200, 800, 500],
+    imageSizes: ['100vw'],
+    defaultSize: 800,
+    namingPattern: '{dir}{name}-{size}{ext}', // foo/bar-200.jpg,...
+    srcsetPattern: '{url} {size}w', // foo/bar-200.jpg 200w,...
+    htmlFileGlob: '**/*.html',
+    htmlImageSelector: 'img'
+  },
   sharp: [{
-    namingPattern:'{dir}{name}-large{ext}',
+    namingPattern:'{dir}{name}-1200{ext}',
     methods: [
       {
         name: 'resize',
@@ -39,7 +50,7 @@ var metalsmithConf = {
     ]
   },
   {
-    namingPattern:'{dir}{name}-medium{ext}',
+    namingPattern:'{dir}{name}-800{ext}',
     methods: [
       {
         name: 'resize',
@@ -57,7 +68,7 @@ var metalsmithConf = {
       }
     ]
   },{
-    namingPattern:'{dir}{name}-small{ext}',
+    namingPattern:'{dir}{name}-500{ext}',
     methods: [
       {
         name: 'resize',
@@ -91,15 +102,15 @@ var metalsmithConf = {
   writemetadata: {
     pattern: ['**/*'],
     ignorekeys: ['next','previous'],
-    // bufferencoding: 'utf8'
+    bufferencoding: 'utf8'
   },
   debug: { // Use setting up an environment variable DEBUG=metalsmith:*
     log: "first debug",      // any comment you like
-    metadata: false,         // default: true
+    metadata: true,         // default: true
     source: false,           // default: true
     destination: false,      // default: true
     files: true,             // default: true
-    // match: "**/*.md"         // default: all files
+    match: "**/*.md"         // default: all files
   }
 };
 
