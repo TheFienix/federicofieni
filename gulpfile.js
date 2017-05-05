@@ -52,7 +52,7 @@ gulp.task('js',function(){
   .pipe(gulp.dest('docs/js'));
 });
 
-gulp.task('js-watch',['js'],function(done){
+gulp.task('browser-reload',['js'],function(done){
   browserSync.reload();
   done();
 });
@@ -60,11 +60,11 @@ gulp.task('js-watch',['js'],function(done){
 gulp.task('serve',function(){
   browserSync.init({
     server: "./docs",
-    open: false
+    port: 8990
   });
 
   gulp.watch('./styles/*.css',['css']);
-  gulp.watch('./scripts/*.js',['js-watch']);
+  gulp.watch('./scripts/*.js',['browser-reload']);
 
 });
 
