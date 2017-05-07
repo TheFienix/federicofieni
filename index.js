@@ -4,6 +4,7 @@ collections     = require('metalsmith-collections'),
 conf            = require('./metalsmith.conf'),
 debug           = require('metalsmith-debug'),
 drafts          = require('metalsmith-drafts'),
+msIf            = require('metalsmith-if'),
 images          = require('metalsmith-project-images'),
 imagemin        = require('metalsmith-imagemin'),
 layouts         = require('metalsmith-layouts'),
@@ -16,14 +17,22 @@ writemetadata   = require('metalsmith-writemetadata')
 
 adaptiveImages = AdaptiveImages(conf.adaptiveImages);
 
+var buildImages = process.env.BUILD_IMAGES;
+
 Metalsmith(__dirname)
 .metadata(conf.metadata)
+.use(metadataFiles({
+  manifest: "metadata-files://src/rev-manifest.json"
+}))
 .source('./src') // already defaults to ./src
 // .ignore('css')
 .destination('./docs')
-.clean(true)
+.clean(false)
 .use(collections(conf.collections))
-.use(sharp(conf.sharp))
+.use(msIf(
+  buildImages,
+  sharp(conf.sharp)
+))
 .use(images(conf.images))
 .use(permalinks(conf.permalinks))
 .use(adaptiveImages.processImages)
