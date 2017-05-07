@@ -15,33 +15,50 @@ rev             = require('gulp-rev'),
 sourcemaps      = require('gulp-sourcemaps')
 ;
 
-gulp.task('css',function () {
+var env = process.env.GULP_ENV,
+cssPlugins = [
+  cssnext,
+  precss
+],
+jsDeps = ['src/scripts/*.js'];
 
-  var plugins = [
-    cssnext,
-    precss
-  ];
 
+gulp.task('clean:css',function(){
+  return del([
+    'docs/css/*'
+  ]);
+});
+
+gulp.task('css:build',['clean:css'],function(){
+  return gulp.src('./styles/*.css')
+  .pipe(postcss(cssPlugins))
+  .pipe(cssnano())
+  .pipe(gulp.dest('docs/css'))
+  .pipe(gulp.dest('src'));
+});
+
+gulp.task('css:dev',function () {
   return gulp.src('./styles/*.css')
   .pipe(sourcemaps.init())
-  .pipe(postcss(plugins))
-  .pipe(cssnano())
+  .pipe(postcss(cssPlugins))
   .pipe(sourcemaps.write('.'))
-  .pipe(rev())
   .pipe(gulp.dest('docs/css'))
-  .pipe(rev.manifest())
-  .pipe(gulp.dest('src'))
   .pipe(browserSync.stream());
 });
 
-gulp.task('js',function(){
-  var dependencies = [];
-  return gulp.src(['src/scripts/*.js'])
+gulp.task('js:dev',function(){
+  return gulp.src(jsDeps)
   .pipe(concat('scripts.js'))
   .pipe(gulp.dest('docs/js'));
 });
 
-gulp.task('browser-reload',['js'],function(done){
+gulp.task('js:build',function(){
+  return gulp.src(jsDeps)
+  .pipe(concat('scripts.js'))
+  .pipe(gulp.dest('docs/js'));
+});
+
+gulp.task('browser-reload',['js:dev'],function(done){
   browserSync.reload();
   done();
 });
@@ -49,12 +66,14 @@ gulp.task('browser-reload',['js'],function(done){
 gulp.task('serve',function(){
   browserSync.init({
     server: "./docs",
-    port: 8990
+    port: 8990,
+    open: false
   });
 
-  gulp.watch('./styles/*.css',['css']);
-  gulp.watch('./scripts/*.js',['browser-reload']);
+  gulp.watch('./styles/*.css',['css:dev']);
+  gulp.watch('./scripts/*.js',['js:dev'],['browser-reload']);
 
 });
 
 gulp.task('default',['serve']);
+gulp.task('build',['css:build','js:build']);
