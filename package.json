@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp-dev": "gulp",
+    "gulp-build": "gulp build",
+    "metalsmith-build": "make build",
+    "metalsmith-images": "BUILD_IMAGES=true make build"
   },
   "repository": {
     "type": "git",
@@ -48,6 +51,7 @@
     "metalsmith-drafts": "0.0.1",
     "metalsmith-feed": "^0.2.0",
     "metalsmith-html-minifier": "^2.2.0",
+    "metalsmith-if": "^0.1.1",
     "metalsmith-imagemin": "^3.0.0",
     "metalsmith-in-place": "^2.0.1",
     "metalsmith-layouts": "^1.8.0",
@@ -67,6 +71,7 @@
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.0",
     "babel-preset-es2015": "^6.22.0",
+    "del": "^2.2.2",
     "webpack": "^2.2.1"
   }
 }
