@@ -72,7 +72,7 @@ gulp.task('serve',function(){
 
   gulp.watch('./styles/*.css',['css:dev']);
   gulp.watch('./scripts/*.js',['js:dev'],['browser-reload']);
-
+  gulp.watch('./docs/**/*.html',['browser-reload']);
 });
 
 gulp.task('default',['serve']);
