@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=BenchNine:700&subset=latin-ext');
+
 /* custom properties */
 :root {
   --fontSize: 1.5rem;
@@ -20,12 +23,63 @@
 
 /* custom media queries */
 @custom-media --viewport-medium (width <= 50rem);
+@custom-media --viewport-large (width > 50rem);
 
 /* some var() & calc() */
 body {
   color: var(--mainColor);
-
+  font-family: 'BenchNine';
   font-size: var(--fontSize);
   line-height: calc(var(--fontSize) * 1.5);
   padding: calc((var(--fontSize) / 2) + 1px);
+}
+
+.header {
+  height: 10%;
+}
+
+.wrapper {
+  @media (--viewport-large) {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+  }
+  .image-container {
+    @media (--viewport-large) {
+      display: block;
+      position: absolute;
+      height: 90%;
+      width: 1000rem;
+      bottom: 0;
+    }
+  }
+}
+
+.image {
+  img {
+    width: 100%;
+    @media (--viewport-large) {
+      width: auto;
+      height: 100%;
+    }
+
+  }
+  @media (--viewport-medium) {
+    width: 100%;
+  }
+  @media (--viewport-large) {
+    width: auto;
+    height: 100%;
+    float: left;
+    display: block;
+    position: relative;
+  }
+}
+
+footer {
+  clear: both;
 }
