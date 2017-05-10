@@ -25,6 +25,9 @@
 @custom-media --viewport-medium (width <= 50rem);
 @custom-media --viewport-large (width > 50rem);
 
+html {
+  height: 100%;
+}
 /* some var() & calc() */
 body {
   color: var(--mainColor);
@@ -32,53 +35,54 @@ body {
   font-size: var(--fontSize);
   line-height: calc(var(--fontSize) * 1.5);
   padding: calc((var(--fontSize) / 2) + 1px);
+  height: 100%;
+  all: initial;
 }
 
-.header {
-  height: 10%;
-}
+.main {
+  height: 100vh;
 
-.wrapper {
-  @media (--viewport-large) {
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
+  header {
+    height: 8vh;
   }
+
   .image-container {
-    @media (--viewport-large) {
-      display: block;
-      position: absolute;
-      height: 90%;
-      width: 1000rem;
-      bottom: 0;
-    }
-  }
-}
+    height: 92vh;
+    display: flex;
 
-.image {
-  img {
-    width: 100%;
+    @media (--viewport-medium) {
+      flex-direction: column;
+    }
+
     @media (--viewport-large) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: stretch;
+      align-items: flex-start;
+    }
+
+    .image {
       width: auto;
+      margin-right: .2em;
       height: 100%;
-    }
+      img {
+        width: 100%;
+        @media (--viewport-large) {
+          width: auto;
+          height: 100%;
+        }
 
-  }
-  @media (--viewport-medium) {
-    width: 100%;
-  }
-  @media (--viewport-large) {
-    width: auto;
-    height: 100%;
-    float: left;
-    display: block;
-    position: relative;
+      }
+      @media (--viewport-medium) {
+
+      }
+      @media (--viewport-large) {
+
+      }
+    }
   }
 }
+
 
 footer {
   clear: both;

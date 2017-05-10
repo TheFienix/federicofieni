@@ -1,24 +1,25 @@
 {{> head }}
 <body>
-  <div class="wrapper">
+  <div class="main">
+
     {{> header }}
-    <h1>{{ title }}</h1>
 
     <div class="image-container">
-    {{#each illustrations }}
-    {{#each this.imagesMap as |image imageKey|}}
-    <div class="image">
-      <img
-      alt="{{../this.title}}"
-      src="{{imageKey}}"
-      srcset="{{image.srcset}}"
-      sizes="{{image.sizes}}"
-      >
+      {{#each illustrations }}
+      {{#each this.imagesMap as |image imageKey|}}
+      <div class="image">
+        <img
+        alt="{{../this.title}}"
+        src="{{imageKey}}"
+        srcset="{{image.srcset}}"
+        sizes="{{image.sizes}}"
+        >
+      </div>
+      {{/each}}
+      {{/each}}
     </div>
-    {{/each}}
-    {{/each}}
   </div>
-  </div>
-  {{> footer }}
+
+  <!-- {{> footer }} -->
 </body>
 </html>
