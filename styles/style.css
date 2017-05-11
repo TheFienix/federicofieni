@@ -4,8 +4,11 @@
 /* custom properties */
 :root {
   --fontSize: 1.5rem;
-  --mainColor: #12345678;
-  --highlightColor: hwb(190, 35%, 20%);
+  --mainColor: #000;
+  --bgColor: #F2F2F2;
+  --highlightColor: #BB0C0C;
+  --headerHeight: 18vh;
+  --logoMargin: .5em
 }
 
 /* custom properties set & @apply rule */
@@ -30,25 +33,73 @@ html {
 }
 /* some var() & calc() */
 body {
+  all: initial;
   color: var(--mainColor);
   font-family: 'BenchNine';
   font-size: var(--fontSize);
-  line-height: calc(var(--fontSize) * 1.5);
-  padding: calc((var(--fontSize) / 2) + 1px);
+  line-height: calc(var(--fontSize) * 1.4);
   height: 100%;
-  all: initial;
 }
 
 .main {
   height: 100vh;
 
+
   header {
-    height: 8vh;
+    height: var(--headerHeight);
+    background-color: var(--bgColor);
+    position: relative;
+    .title-bar {
+      height: 66%;
+      display: block;
+      overflow: hidden;
+      text-transform: uppercase;
+      padding: 0;
+      box-sizing: content;
+
+
+      .logo {
+        display: inline-block;
+        float: left;
+        padding: var(--logoMargin);
+        height: 2.5em;
+      }
+
+      .title {
+        display: block;
+        font-size: calc(var(--fontSize) * 2);
+        line-height: calc(var(--fontSize) * 1.4);
+        padding-top: calc(var(--logoMargin) - calc(var(--logoMargin) * 0.333));
+
+      }
+
+      .subtitle {
+        display: block;
+        font-size: calc(var(--fontSize) * 1.1);
+        line-height: calc(var(--fontSize) * 1);
+        padding-top: calc(var(--fontSize) * 0.2);
+      }
+    }
+
+    .menu {
+      display: block;
+      clear: both;
+      height: 34%;
+      background-color: color(var(--bgColor) blackness(10%));
+      position: absolute;
+      bottom:0;
+      width: 100%;
+    }
+
   }
 
   .image-container {
-    height: 92vh;
+    clear: both;
+    height: calc(100vh - var(--headerHeight));
     display: flex;
+    position: relative;
+    padding: 0;
+    margin: 0;
 
     @media (--viewport-medium) {
       flex-direction: column;
@@ -63,7 +114,7 @@ body {
 
     .image {
       width: auto;
-      margin-right: .2em;
+      margin: 0;
       height: 100%;
       img {
         width: 100%;
