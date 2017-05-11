@@ -95,7 +95,7 @@ var metalsmithConf = {
     // }]
   },
   layouts: {
-    directory: 'layouts/',
+    directory: 'layouts',
     engine: 'handlebars',
     partials: 'partials'
   },
