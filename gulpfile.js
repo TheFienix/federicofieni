@@ -67,7 +67,8 @@ gulp.task('serve',function(){
   browserSync.init({
     server: "./docs",
     port: 8990,
-    open: false
+    open: false,
+    notify: false
   });
 
   gulp.watch('./styles/*.css',['css:dev']);
