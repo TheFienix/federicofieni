@@ -23,6 +23,7 @@ cssPlugins = [
 jsDeps = [
   './scripts/jquery-*.min.js',
   './scripts/jquery.mousewheel.min.js',
+  './bower_components/dragscroll/dragscroll.js',
   './scripts/scroll.js'
 ];
 
