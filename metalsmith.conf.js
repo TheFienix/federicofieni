@@ -37,16 +37,16 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 1200 ]
       },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/L.png',
-          {
-            top: 10,
-            left: 10,
-          }
-        ]
-      }
+      // {
+      //   name: 'overlayWith',
+      //   args: [
+      //     './img/L.png',
+      //     {
+      //       top: 10,
+      //       left: 10,
+      //     }
+      //   ]
+      // }
     ]
   },
   {
@@ -56,16 +56,16 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 800 ]
       },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/M.png',
-          {
-            top: 10,
-            left: 10,
-          }
-        ]
-      }
+      // {
+      //   name: 'overlayWith',
+      //   args: [
+      //     './img/M.png',
+      //     {
+      //       top: 10,
+      //       left: 10,
+      //     }
+      //   ]
+      // }
     ]
   },{
     namingPattern:'{dir}{name}-500{ext}',
@@ -74,16 +74,16 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 500 ]
       },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/S.png',
-          {
-            top: 10,
-            left: 10,
-          }
-        ]
-      }
+      // {
+      //   name: 'overlayWith',
+      //   args: [
+      //     './img/S.png',
+      //     {
+      //       top: 10,
+      //       left: 10,
+      //     }
+      //   ]
+      // }
     ]
   }],
   permalinks: {
