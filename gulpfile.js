@@ -20,7 +20,11 @@ cssPlugins = [
   cssnext,
   precss
 ],
-jsDeps = ['src/scripts/*.js'];
+jsDeps = [
+  './scripts/jquery-*.min.js',
+  './scripts/jquery.mousewheel.min.js',
+  './scripts/scroll.js'
+];
 
 
 gulp.task('clean:css',function(){
@@ -72,7 +76,7 @@ gulp.task('serve',function(){
   });
 
   gulp.watch('./styles/*.css',['css:dev']);
-  gulp.watch('./scripts/*.js',['js:dev'],['browser-reload']);
+  gulp.watch('./scripts/*.js',['js:dev','browser-reload']);
   gulp.watch('./docs/**/*.html',['browser-reload']);
 });
 
