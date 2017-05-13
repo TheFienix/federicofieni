@@ -4,8 +4,9 @@
     if ( window.innerWidth <= 800 ) return;
     var $window = $( window );
     var currentScrollPosition =  $window.scrollLeft();
-    $(this).scrollLeft( (currentScrollPosition -= event.originalEvent.wheelDelta) );
+    var direction = event.originalEvent.wheelDelta < 0 ? -1 : 1;
+    $(this).scrollLeft( (currentScrollPosition -= ( 30 * direction )) );
     event.preventDefault();
   });
-  
+
 })(jQuery);
