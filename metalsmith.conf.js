@@ -1,9 +1,11 @@
 var metalsmithConf = {
   metadata: {
-    title:          "Federico Fieni - Digital illustrator",
-    description:    "Art portfolio",
+    title:          "Federico Fieni - Digital artist",
+    description:    "Federico Fieni online art portfolio",
     generator:      "Metalsmith",
-    url:            "http://www.federicofieni.com"
+    url:            "http://www.federicofieni.com",
+    ogImage:        "/illustrations/paul-and-nina/images/Paul-1200.jpg",
+    deviantArt:     "http://ff2d.deviantart.com/"
   },
   collections: {
     illustrations: {
@@ -37,16 +39,15 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 1200 ]
       },
-      // {
-      //   name: 'overlayWith',
-      //   args: [
-      //     './img/L.png',
-      //     {
-      //       top: 10,
-      //       left: 10,
-      //     }
-      //   ]
-      // }
+      {
+        name: 'overlayWith',
+        args: [
+          './img/watermark-L.png',
+          {
+            gravity: 'southwest'
+          }
+        ]
+      }
     ]
   },
   {
@@ -56,16 +57,15 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 800 ]
       },
-      // {
-      //   name: 'overlayWith',
-      //   args: [
-      //     './img/M.png',
-      //     {
-      //       top: 10,
-      //       left: 10,
-      //     }
-      //   ]
-      // }
+      {
+        name: 'overlayWith',
+        args: [
+          './img/watermark-M.png',
+          {
+            gravity: 'southwest'
+          }
+        ]
+      }
     ]
   },{
     namingPattern:'{dir}{name}-500{ext}',
@@ -74,24 +74,23 @@ var metalsmithConf = {
         name: 'resize',
         args: [ null, 500 ]
       },
-      // {
-      //   name: 'overlayWith',
-      //   args: [
-      //     './img/S.png',
-      //     {
-      //       top: 10,
-      //       left: 10,
-      //     }
-      //   ]
-      // }
+      {
+        name: 'overlayWith',
+        args: [
+          './img/watermark-S.png',
+          {
+            gravity: 'southwest'
+          }
+        ]
+      }
     ]
   }],
   permalinks: {
     pattern: 'illustrations/:title',
-    date: 'YYYY/MM/DD',
+    // date: 'YYYY/MM/DD',
     // linksets: [{
     //   match: {collection: 'illustrations'},
-    //   pattern: '/illustrations/:date/:title'
+    //   pattern: '/illustrations/:title'
     // }]
   },
   layouts: {
