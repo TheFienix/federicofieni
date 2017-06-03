@@ -56,10 +56,15 @@ html,body {
 
   header {
     height: var(--headerHeight) ;
-    position: fixed;
     width: 100%;
     display: block;
     z-index: 10;
+    position: fixed;
+    top: 0;
+
+    @media (--viewport-medium) {
+      position: relative;
+    }
 
     .title-bar {
       height: 100%;
@@ -128,7 +133,6 @@ html,body {
         }
       }
     }
-
   }
 
   .image-container {
@@ -136,13 +140,13 @@ html,body {
     height: calc(100vh - var(--headerHeight) );
     display: flex;
     position: relative;
-
     margin: 0;
     top: var(--headerHeight);
     box-sizing: border-box;
 
     @media (--viewport-medium) {
       flex-direction: column;
+      top: 0;
     }
 
     @media (--viewport-large) {
@@ -156,9 +160,8 @@ html,body {
     .image {
       width: auto;
       margin: 0;
-
-
       box-sizing: border-box;
+
       &:first-child {
         padding-left: var(--globalMargin);
       }
@@ -167,8 +170,8 @@ html,body {
         @media (--viewport-large) {
           width: auto;
           height: 100%;
+          pointer-events: none;
         }
-
       }
       @media (--viewport-medium) {
         padding: var(--globalMargin) var(--globalMargin) 0 var(--globalMargin);
