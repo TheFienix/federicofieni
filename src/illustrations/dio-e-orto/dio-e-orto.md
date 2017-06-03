@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Dio è orto
+title: Dio è l'orto
 date: 2016-07-02
 ---
 
