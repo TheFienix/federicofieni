@@ -31,7 +31,6 @@
 
 html {
   height: 100%;
-
 }
 /* some var() & calc() */
 body {
@@ -44,10 +43,17 @@ body {
 }
 
 html,body {
-  @media (--viewport-large) {
-    overflow-y: hidden;
-    position: absolute;
+  &.home {
+    @media (--viewport-large) {
+      overflow-y: hidden;
+      position: absolute;
+    }
   }
+}
+
+p {
+  margin:0;
+  padding:0;
 }
 
 .main {
@@ -150,21 +156,48 @@ html,body {
     }
 
     @media (--viewport-large) {
-      padding: 0 0 var(--globalMargin) 0;
+      padding: 0 0 calc(var(--globalMargin)*2.5) 0;
       flex-direction: row;
       flex-wrap: nowrap;
       align-content: stretch;
       align-items: flex-start;
+      &:hover {
+        cursor: grab;
+      }
     }
 
     .image {
       width: auto;
       margin: 0;
       box-sizing: border-box;
+      position: relative;
 
-      &:first-child {
-        padding-left: var(--globalMargin);
+      .image-title {
+        position: absolute;
+        display:block;
+        top:0;
+        right:0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        text-decoration: none;
+        padding-right: calc( var(--globalMargin) / 2);
+        box-sizing: border-box;
+        text-align: right;
+        opacity: 0;
+        transition: opacity .3s ease;
+        &:hover {
+          color: color(var(--highlightColor) lightness(80%));
+        }
       }
+
+      &:hover {
+        .image-title {
+          transition: opacity .3s ease;
+          opacity: 1;
+        }
+      }
+
       img {
         width: 100%;
         @media (--viewport-large) {
@@ -174,16 +207,39 @@ html,body {
         }
       }
       @media (--viewport-medium) {
-        padding: var(--globalMargin) var(--globalMargin) 0 var(--globalMargin);
+        margin: var(--globalMargin) 0;
       }
       @media (--viewport-large) {
         height: 100%;
-        padding: var(--globalMargin) 0 var(--globalMargin) var(--globalMargin);  padding: var(--globalMargin) 0 var(--globalMargin) var(--globalMargin);
+        margin: var(--globalMargin) 0 var(--globalMargin) var(--globalMargin);
       }
     }
   }
 }
 
+.illustration {
+  overflow-x: hidden;
+  overflow-y: initial;
+  position: relative;
+  .image-container {
+    flex-direction: column;
+    .image {
+      width: 100%;
+      height: auto;
+      margin:0 ;
+      padding: var(--globalMargin) var(--globalMargin) 0 var(--globalMargin);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .contents {
+      width: 100vw;
+      height: auto;
+      padding: 0 var(--globalMargin);
+    }
+  }
+}
 
 footer {
   clear: both;
