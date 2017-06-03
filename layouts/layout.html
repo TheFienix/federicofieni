@@ -1,5 +1,5 @@
 {{> head }}
-<body class="dragscroll">
+<body class="home dragscroll">
   <div class="main">
 
     {{> header }}
@@ -16,6 +16,7 @@
         sizes="{{image.sizes}}"
         >
         </a>
+        <a class="image-title" href="{{../this.path.dir}}/{{../this.path.name}}.html"> {{../this.title}} </a>
       </div>
       {{/each}}
       {{/each}}

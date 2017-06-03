@@ -1,11 +1,38 @@
-{{> head }}
-<body>
+<!doctype html>
+<html lang="it" class="illustration">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="text/javascript" src="/js/scripts.js"></script>
+</head>
+
+<body class="illustration">
   <div class="main">
     {{> header }}
 
-    <h1>{{ title }}</h1>
-    <p>{{ contents }}</p>
+    <div class="image-container">
 
+      {{#each this.imagesMap as |image imageKey|}}
+      <div class="image">
+
+        <img
+        alt="{{../this.title}}"
+        src="/{{imageKey}}"
+        srcset="/{{image.srcset}}"
+        sizes="/{{image.sizes}}"
+        >
+
+      </div>
+      {{/each}}
+
+      <div class="contents">
+        {{{ contents }}}
+      </div>
+    </div>
   </div>
+</div>
 </body>
 </html>
