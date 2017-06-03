@@ -21,7 +21,6 @@
 
 html {
   height: 100%;
-
 }
 /* some var() & calc() */
 body {
@@ -148,13 +147,21 @@ body {
 html, body {
 }
 
-@media (min-width: 50.001rem) {
+html.home, body.home{
+}
 
-  html, body{
+@media (min-width: 50.001rem){
+
+  html.home, body.home{
     overflow-y: hidden;
     position: absolute;
   }
-  }
+}
+
+p {
+  margin:0;
+  padding:0;
+}
 
 .main {
   height: 100vh;
@@ -260,14 +267,38 @@ html, body {
   width: auto;
   margin: 0;
   box-sizing: border-box;
+  position: relative;
+}
+
+.main .image-container .image .image-title {
+  position: absolute;
+  display:block;
+  top:0;
+  right:0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  text-decoration: none;
+  padding-right: 0.75vh;
+  box-sizing: border-box;
+  text-align: right;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease
+}
+
+.main .image-container .image .image-title:hover{
+  color: rgb(249, 159, 159);
 }
 
 .main .image-container .image img {
   width: 100%
 }
 
-.main .image-container .image:first-child{
-  padding-left: 1.5vh;
+.main .image-container .image:hover .image-title{
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  opacity: 1;
 }
 
 @media (max-width: 50rem) {
@@ -291,7 +322,7 @@ html, body {
 @media (min-width: 50.001rem) {
 
   .main .image-container{
-    padding: 0 0 1.5vh 0;
+    padding: 0 0 3.75vh 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -303,6 +334,11 @@ html, body {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+  }
+
+  .main .image-container:hover{
+    cursor: -webkit-grab;
+    cursor: grab;
   }
     }
 
@@ -318,7 +354,7 @@ html, body {
 @media (max-width: 50rem) {
 
   .main .image-container .image{
-    padding: 1.5vh 1.5vh 0 1.5vh;
+    margin: 1.5vh 0;
   }
       }
 
@@ -326,11 +362,41 @@ html, body {
 
   .main .image-container .image{
     height: 100%;
-    padding: 1.5vh 0 1.5vh 1.5vh;
-    padding: 1.5vh 0 1.5vh 1.5vh;
+    margin: 1.5vh 0 1.5vh 1.5vh;
   }
       }
 
+.illustration {
+  overflow-x: hidden;
+  overflow-y: visible;
+  overflow-y: initial;
+  position: relative;
+}
+
+.illustration .image-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.illustration .image-container .image {
+  width: 100%;
+  height: auto;
+  margin:0 ;
+  padding: 1.5vh 1.5vh 0 1.5vh;
+}
+
+.illustration .image-container .image img {
+  width: 100%;
+  height: auto;
+}
+
+.illustration .image-container .contents {
+  width: 100vw;
+  height: auto;
+  padding: 0 1.5vh;
+}
 
 footer {
   clear: both;
