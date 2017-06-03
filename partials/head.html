@@ -5,7 +5,14 @@
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:determiner" content="the" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:site_name" content="{{ title }}" />
+  <meta property="og:image" content="{{ ogImage }}" />
+
   <link rel="stylesheet" href="/css/style.css">
-  <script type="text/javascript" src="/js/scripts.js">
-  </script>
+  <script type="text/javascript" src="/js/scripts.js"></script>
 </head>
