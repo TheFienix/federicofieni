@@ -85,14 +85,6 @@ var metalsmithConf = {
       }
     ]
   }],
-  permalinks: {
-    pattern: 'illustrations/:title',
-    // date: 'YYYY/MM/DD',
-    // linksets: [{
-    //   match: {collection: 'illustrations'},
-    //   pattern: '/illustrations/:title'
-    // }]
-  },
   layouts: {
     directory: 'layouts',
     engine: 'handlebars',
