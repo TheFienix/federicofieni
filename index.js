@@ -26,15 +26,15 @@ Metalsmith(__dirname)
 .destination('./docs')
 .clean(false)
 .use(collections(conf.collections))
-.use(msIf(
-  buildImages,
-  sharp(conf.sharp)
-))
 .use(images(conf.images))
 // .use(permalinks(conf.permalinks))
 .use(adaptiveImages.processImages)
 .use(markdown())
 .use(layouts(conf.layouts))
+.use(msIf(
+  buildImages,
+  sharp(conf.sharp)
+))
 // .use(writemetadata(conf.writemetadata))
 .use(debug(conf.debug))
 .build(function(err, files){
