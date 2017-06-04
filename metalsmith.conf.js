@@ -1,7 +1,7 @@
 var metalsmithConf = {
   metadata: {
     title:          "Federico Fieni - Digital artist",
-    description:    "Federico Fieni online art portfolio",
+    description:    "Federico Fieni's art portfolio",
     generator:      "Metalsmith",
     url:            "http://www.federicofieni.com",
     ogImage:        "/illustrations/paul-and-nina/images/Paul-1200.jpg",
