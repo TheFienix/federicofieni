@@ -26,15 +26,15 @@
 
       {{#each this.imagesMap as |image imageKey|}}
       <div class="image">
-
-        <img
-        alt="{{../this.title}}"
-        title="{{../this.title}}"
-        src="/{{imageKey}}"
-        srcset="/{{image.srcset}}"
-        sizes="/{{image.sizes}}"
-        >
-
+        <a href="/{{image.src}}">
+          <img
+          alt="{{../this.title}}"
+          title="{{../this.title}}"
+          src="/{{imageKey}}"
+          srcset="/{{image.srcset}}"
+          sizes="/{{image.sizes}}"
+          >
+        </a>
       </div>
       {{/each}}
 
