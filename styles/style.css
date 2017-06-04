@@ -231,6 +231,9 @@ p {
   position: relative;
   .image-container {
     flex-direction: column;
+    &:hover {
+      cursor: pointer;
+    }
     .image {
       width: 100%;
       height: auto;
@@ -240,6 +243,7 @@ p {
         width: 100%;
         max-width: 1200px;
         height: auto;
+        pointer-events: initial;
       }
     }
     .contents {
