@@ -177,17 +177,25 @@ p {
         display:block;
         top:0;
         right:0;
-        width: 100%;
         background-color: rgba(0,0,0,0.5);
         color: white;
         text-decoration: none;
-        padding-right: calc( var(--globalMargin) / 2);
+        padding: 0  var(--globalMargin);
         box-sizing: border-box;
         text-align: right;
-        opacity: 0;
-        transition: opacity .3s ease;
-        &:hover {
-          color: color(var(--highlightColor) lightness(80%));
+
+        @media (--viewport-large) {
+          opacity: 0;
+          transition: opacity .3s ease;
+          &:hover {
+            color: color(var(--highlightColor) lightness(80%));
+          }
+        }
+
+        @media (--viewport-medium) {
+          font-size: .7em;
+          line-height: 1.6em;
+          padding: 0 var(--globalMargin);
         }
       }
 
