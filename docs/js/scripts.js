@@ -107,7 +107,7 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 (function($){
 
   var dragscroll = document.querySelector('.dragscroll');
-  if ( dragscroll.length < 1 ) return;
+  if ( dragscroll === '' ) return;
 
   $( window ).on('mousewheel', function(event) {
     if ( window.innerWidth <= 800 ) return;
