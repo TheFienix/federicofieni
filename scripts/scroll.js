@@ -1,7 +1,7 @@
 (function($){
 
-  var dragscroll = document.querySelector('.dragscroll');
-  if ( dragscroll === '' ) return;
+  var dragscroll = document.querySelectorAll('.dragscroll');
+  if ( dragscroll.length === 0 ) return;
 
   $( window ).on('mousewheel', function(event) {
     if ( window.innerWidth <= 800 ) return;
