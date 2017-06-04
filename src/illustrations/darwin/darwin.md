@@ -4,4 +4,4 @@ title: T-shirt per La Scienza Coatta
 date: 2017-05-22
 ---
 
-Ispirato al famoso aforisma nietzschiano.
+Illustrazione a sostegno dell'associazione di divulgazione scientifica [La Scienza Coatta](https://www.facebook.com/LaScienzaCoatta/)
