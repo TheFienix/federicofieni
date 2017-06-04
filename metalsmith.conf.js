@@ -4,7 +4,7 @@ var metalsmithConf = {
     description:    "Federico Fieni's art portfolio",
     generator:      "Metalsmith",
     url:            "http://www.federicofieni.com",
-    ogImage:        "/illustrations/fantastico-mondo-paul/images/Paul.jpg",
+    ogImage:        "/illustrations/fantastico-mondo-paul/images/Paul-1200.jpg",
     deviantArt:     "http://ff2d.deviantart.com/"
   },
   collections: {
@@ -26,7 +26,7 @@ var metalsmithConf = {
     mapKey: 'imagesMap',
     imageWidths: [1200, 800, 500],
     imageSizes: ['100vw'],
-    defaultSize: 800,
+    defaultSize: 1200,
     namingPattern: '{dir}{name}-{size}{ext}', // foo/bar-200.jpg,...
     srcsetPattern: '{url} {size}w', // foo/bar-200.jpg 200w,...
     htmlFileGlob: '**/*.html',

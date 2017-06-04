@@ -10,8 +10,9 @@
   <meta property="og:description" content="{{description}}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{url}}/{{path.dir}}/{{path.name}}.html" />
-  <meta property="og:image" content="{{url}}/{{images}}" />
-
+  {{#each this.imagesMap as |image imageKey|}}
+  <meta property="og:image" content="{{url}}/{{image.src}}" />
+  {{/each}}
 
   {{> styles }}
 
