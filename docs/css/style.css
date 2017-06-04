@@ -405,12 +405,17 @@ p {
   width: 100%;
   max-width: 1200px;
   height: auto;
+  pointer-events: initial;
 }
 
 .illustration .image-container .contents {
   width: 100vw;
   height: auto;
   padding: 0 1.5vh;
+}
+
+.illustration .image-container:hover{
+  cursor: pointer;
 }
 
 footer {
