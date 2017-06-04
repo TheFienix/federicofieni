@@ -4,7 +4,7 @@ var metalsmithConf = {
     description:    "Federico Fieni's art portfolio",
     generator:      "Metalsmith",
     url:            "http://www.federicofieni.com",
-    ogImage:        "/illustrations/paul-and-nina/images/Paul-1200.jpg",
+    ogImage:        "/illustrations/fantastico-mondo-paul/images/Paul.jpg",
     deviantArt:     "http://ff2d.deviantart.com/"
   },
   collections: {
