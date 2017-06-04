@@ -238,6 +238,7 @@ p {
       padding: var(--globalMargin) var(--globalMargin) 0 var(--globalMargin);
       img {
         width: 100%;
+        max-width: 1200px;
         height: auto;
       }
     }

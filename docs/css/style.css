@@ -403,6 +403,7 @@ p {
 
 .illustration .image-container .image img {
   width: 100%;
+  max-width: 1200px;
   height: auto;
 }
 
