@@ -1,5 +1,5 @@
 ---
-title: Paul and Nina
+title: Il fantastico mondo di Paul
 date: 2017-01-24T00:00:00.000Z
 layout: illustration.html
 ---
