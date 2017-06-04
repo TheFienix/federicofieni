@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Polly Pan
+title: Portrait for friend
 date: 2015-08-13
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Eleonora e Fabio
+title: Marriage portrait
 date: 2017-01-10
 ---
 
