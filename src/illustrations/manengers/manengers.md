@@ -1,7 +1,7 @@
 ---
 layout: illustration.html
-title: Avengers portrait
+title: Ritratto come Avengers
 date: 2015-07-14
 ---
 
-My colleagues as the Avengers.
+I miei colleghi (e io) ritratti come gli Avengers.

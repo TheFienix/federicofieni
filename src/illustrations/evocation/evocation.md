@@ -1,7 +1,7 @@
 ---
 layout: illustration.html
-title: Evocation
+title: Illustrazione fantasy
 date: 2015-06-15
 ---
 
-Demon evocation.
+Evocazione di un demone.

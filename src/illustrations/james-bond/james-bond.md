@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Portrait as James Bond
+title: Ritratto come James Bond.
 date: 2016-04-15
 ---
 

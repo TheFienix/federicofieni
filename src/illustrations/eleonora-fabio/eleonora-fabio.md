@@ -1,7 +1,7 @@
 ---
 layout: illustration.html
-title: Marriage portrait
+title: Ritratto per matrimonio
 date: 2017-01-10
 ---
 
-Portrait for marriage.
+Ritratto per il matrimonio di una coppia di amici.
