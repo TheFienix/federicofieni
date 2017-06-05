@@ -1,7 +1,7 @@
 ---
 layout: illustration.html
-title: Ritratto amica.
+title: Ritratto per compleanno
 date: 2015-08-13
 ---
 
-Ritratto per un'amica con la sindrome di Peter Pan.
+Ritratto per regalo di compleanno.

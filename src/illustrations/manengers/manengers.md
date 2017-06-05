@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Ritratto come Avengers
+title: Celebrazione per gruppo di colleghi
 date: 2015-07-14
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: illustration.html
-title: Ritratto come James Bond.
+title: Ritratto James Bond
 date: 2016-04-15
 ---
 
-James Bond agent 007 portrait for client.
+Ritratto per cliente raffigurato come il famoso agente 007.
