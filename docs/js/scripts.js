@@ -111,11 +111,10 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
   $( window ).on('mousewheel', function(event) {
     if ( window.innerWidth <= 800 ) return;
-    event.preventDefault();
+    // event.preventDefault();
     var $window = $( window );
     var currentScrollPosition =  $window.scrollLeft();
-    var direction = event.originalEvent.wheelDelta < 0 ? -1 : 1;
-    $(this).scrollLeft( (currentScrollPosition -= ( 45 * direction )) );
+    $(this).scrollLeft( (currentScrollPosition -= ( 45 * event.deltaY )) );
   });
 
 })(jQuery);

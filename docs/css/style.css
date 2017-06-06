@@ -153,7 +153,7 @@ html.home, body.home{
 @media (min-width: 50.001rem){
 
   html.home, body.home{
-    overflow-y: hidden;
+    overflow: hidden;
     position: absolute;
   }
 }

@@ -45,7 +45,7 @@ body {
 html,body {
   &.home {
     @media (--viewport-large) {
-      overflow-y: hidden;
+      overflow: hidden;
       position: absolute;
     }
   }
