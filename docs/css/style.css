@@ -225,7 +225,7 @@ p {
   background-color: rgb(231, 231, 231);
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: -.3em;
 }
 
 .main header .menu .menu-list {
@@ -314,7 +314,7 @@ p {
 @media (min-width: 50.001rem) {
 
   .main .image-container{
-    padding: 0 0 3.75vh 0;
+    padding: 0 5em 3.75vh 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
