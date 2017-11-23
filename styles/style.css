@@ -249,7 +249,7 @@ p {
     .contents {
       width: 100vw;
       height: auto;
-      padding: 0 var(--globalMargin);
+      padding: 0 0 calc(var(--globalMargin)*4) var(--globalMargin);
     }
   }
 }

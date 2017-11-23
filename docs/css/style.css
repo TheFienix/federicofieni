@@ -411,7 +411,7 @@ p {
 .illustration .image-container .contents {
   width: 100vw;
   height: auto;
-  padding: 0 1.5vh;
+  padding: 0 0 6vh 1.5vh;
 }
 
 .illustration .image-container:hover{
