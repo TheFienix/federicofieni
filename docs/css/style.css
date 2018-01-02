@@ -926,8 +926,6 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 
 /* custom properties set & @apply rule */
 
-
-
 /* custom media queries */
 
 html {
@@ -1070,7 +1068,8 @@ p {
 }
 
 .main header {
-  height: 4.8em;
+  height: 128px;
+  height: 8rem;
   width: 100%;
   display: block;
   z-index: 10;
@@ -1126,7 +1125,7 @@ p {
   background-color: rgb(231, 231, 231);
   position: absolute;
   width: 100%;
-  bottom: -.3em;
+  bottom: 0;
 }
 
 .main header .menu .menu-list {
@@ -1177,7 +1176,7 @@ p {
   text-decoration: none;
   box-sizing: border-box;
   text-align: right;
-  padding: .3em .4em 0
+  padding: .2em .4em
 }
 
 .main .image-container .image img {
@@ -1193,41 +1192,43 @@ p {
   opacity: 1;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 75rem) {
   .main header{
     position: relative;
   }
     }
 
-@media (max-width: 50rem) {
+@media (max-width: 35rem) {
   .main .image-container .image{
     width: 100%;
   }
       }
 
-@media (min-width: 50.001rem) {
+@media (min-width: 75.001rem) {
   .main .image-container .image{
     overflow: hidden;
-    max-height: 400px;
+    max-height: 320px;
+    max-height: 20rem;
   }
       }
 
-@media (min-width: 50.001rem) {
+@media (min-width: 75.001rem) {
   .main .image-container .image .image-title{
     opacity: 0;
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
     font-size: .8em;
+    line-height: 1.2em;
   }
   .main .image-container .image .image-title:hover{
     color: rgb(249, 159, 159);
   }
         }
 
-@media (max-width: 50rem) {
+@media (max-width: 75rem) {
   .main .image-container .image .image-title{
     font-size: .7em;
-    line-height: 1.6em;
+    line-height: .9em;
   }
         }
 
@@ -1250,12 +1251,11 @@ p {
   height: auto;
   max-height: none;
   max-height: initial;
-  margin:0 ;
+  margin:0 auto;
 }
 
 .illustration .image-container .image img {
   width: 100%;
-  max-width: 1200px;
   min-width: 0;
   min-width: initial;
   min-height: 0;
@@ -1265,14 +1265,26 @@ p {
 }
 
 .illustration .image-container .contents {
-  width: 100vw;
+  width: 98vw;
   height: auto;
-  padding: 0 0 6vh 1.5vh;
+  padding: 0 0 0 .5em
 }
 
 .illustration .image-container:hover{
   cursor: pointer;
 }
+
+@media (min-width: 75.001rem) {
+  .illustration .image-container .image{
+    max-width: 1200px;
+  }
+      }
+
+@media (min-width: 75.001rem) {
+  .illustration .image-container .contents{
+    padding: 0;
+  }
+      }
 
 footer {
   clear: both;
