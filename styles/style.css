@@ -212,6 +212,7 @@ p {
     .image {
       width: 100%;
       height: auto;
+      max-height: initial;
       margin:0 ;
       img {
         width: 100%;
