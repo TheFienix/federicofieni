@@ -34,6 +34,15 @@ var metalsmithConf = {
   },
   sharp: [
     {
+      namingPattern: '{dir}{name}{ext}',
+      methods: [
+        {
+          name: 'resize',
+          args: [ 1, 1 ]
+        }
+      ]
+    },
+    {
       namingPattern: '{dir}{name}-thumb{ext}',
       methods: [
         {

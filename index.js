@@ -22,7 +22,6 @@ var buildImages = process.env.BUILD_IMAGES;
 Metalsmith(__dirname)
 .metadata(conf.metadata)
 .source('./src') // already defaults to ./src
-// .ignore('css')
 .destination('./docs')
 .clean(false)
 .use(collections(conf.collections))
