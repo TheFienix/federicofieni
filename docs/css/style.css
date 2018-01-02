@@ -1256,6 +1256,10 @@ p {
 .illustration .image-container .image img {
   width: 100%;
   max-width: 1200px;
+  min-width: 0;
+  min-width: initial;
+  min-height: 0;
+  min-height: initial;
   height: auto;
   pointer-events: initial;
 }
