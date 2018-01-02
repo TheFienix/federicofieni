@@ -37,7 +37,13 @@ gulp.task('clean:css',function(){
 gulp.task('css:build',['clean:css'],function(){
   return gulp.src('./styles/*.css')
   .pipe(postcss(cssPlugins))
-  .pipe(cssnano())
+  .pipe(cssnano({
+    preset: ['default', {
+      discardComments: {
+        removeAll: true,
+      },
+    }]
+  }))
   .pipe(gulp.dest('docs/css'))
   .pipe(gulp.dest('src'));
 });
