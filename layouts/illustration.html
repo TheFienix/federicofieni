@@ -29,11 +29,10 @@
 
       {{#each this.imagesMap as |image imageKey|}}
       <div class="image">
-        <a href="/{{image.src}}">
+        <a href="/{{../this.path.dir}}/images/{{../this.path.name}}-1200.jpg">
           <img
           alt="{{../this.title}}"
           title="{{../this.title}}"
-          src="/{{imageKey}}"
           srcset="{{image.srcset}}"
           sizes="{{image.sizes}}"
           >
