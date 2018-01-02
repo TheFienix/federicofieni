@@ -21,7 +21,7 @@
 <body class="illustration">
 
   {{> analytics }}
-  
+
   <div class="main">
     {{> header }}
 
@@ -34,16 +34,17 @@
           alt="{{../this.title}}"
           title="{{../this.title}}"
           src="/{{imageKey}}"
-          srcset="/{{image.srcset}}"
-          sizes="/{{image.sizes}}"
+          srcset="{{image.srcset}}"
+          sizes="{{image.sizes}}"
           >
         </a>
+        <div class="contents">
+          {{{ ../contents }}}
+        </div>
       </div>
       {{/each}}
 
-      <div class="contents">
-        {{{ contents }}}
-      </div>
+
     </div>
   </div>
 </div>

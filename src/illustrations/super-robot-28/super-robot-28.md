@@ -5,4 +5,4 @@ layout: illustration.html
 ---
 
 **Super Robot 28** (鉄人28号 Tetsujin 28-go).
-Omaggio ad uno dei più vecchi super-robot.
+Omaggio al primo dei super-robot.

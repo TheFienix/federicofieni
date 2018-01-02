@@ -10,7 +10,7 @@
   --mainColor: #000;
   --bgColor: #F2F2F2;
   --highlightColor: #BB0C0C;
-  --headerHeight: 4.8em;
+  --headerHeight: 8rem;
   --globalMargin: 1.5vh;
 }
 
@@ -23,12 +23,10 @@
   };
 }
 
-
-
 /* custom media queries */
-@custom-media --viewport-small (width <= 20rem);
-@custom-media --viewport-medium (width <= 50rem);
-@custom-media --viewport-large (width > 50rem);
+@custom-media --viewport-small (width <= 35rem);
+@custom-media --viewport-medium (width <= 75rem);
+@custom-media --viewport-large (width > 75rem);
 
 html {
   height: 100%;
@@ -112,7 +110,7 @@ p {
       background-color: color(var(--bgColor) blackness(10%));
       position: absolute;
       width: 100%;
-      bottom: -.3em;
+      bottom: 0;
 
       .menu-list {
         list-style: none;
@@ -148,12 +146,12 @@ p {
       margin: 0;
       box-sizing: border-box;
       position: relative;
-      @media (--viewport-medium) {
+      @media (--viewport-small) {
         width: 100%;
       }
       @media (--viewport-large) {
         overflow: hidden;
-        max-height: 400px;
+        max-height: 20rem;
       }
       .image-title {
         word-spacing: normal;
@@ -166,12 +164,13 @@ p {
         text-decoration: none;
         box-sizing: border-box;
         text-align: right;
-        padding: .3em .4em 0;
+        padding: .2em .4em;
 
         @media (--viewport-large) {
           opacity: 0;
           transition: opacity .3s ease;
           font-size: .8em;
+          line-height: 1.2em;
           &:hover {
             color: color(var(--highlightColor) lightness(80%));
           }
@@ -179,7 +178,7 @@ p {
 
         @media (--viewport-medium) {
           font-size: .7em;
-          line-height: 1.6em;
+          line-height: .9em;
         }
       }
 
@@ -213,10 +212,13 @@ p {
       width: 100%;
       height: auto;
       max-height: initial;
-      margin:0 ;
+      margin:0 auto;
+      @media (--viewport-large) {
+        max-width: 1200px;
+      }
+
       img {
         width: 100%;
-        max-width: 1200px;
         min-width: initial;
         min-height: initial;
         height: auto;
@@ -224,9 +226,12 @@ p {
       }
     }
     .contents {
-      width: 100vw;
+      width: 98vw;
       height: auto;
-      padding: 0 0 calc(var(--globalMargin)*4) var(--globalMargin);
+      padding: 0 0 0 .5em;
+      @media (--viewport-large) {
+        padding: 0;
+      }
     }
   }
 }
