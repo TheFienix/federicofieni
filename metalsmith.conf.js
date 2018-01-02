@@ -32,77 +32,88 @@ var metalsmithConf = {
     htmlFileGlob: '**/*.html',
     htmlImageSelector: 'img'
   },
-  sharp: [{
-    namingPattern:'{dir}{name}-1200{ext}',
-    methods: [
-      {
-        name: 'resize',
-        args: [ null, 1200 ]
-      },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/watermark-L.png',
-          {
-            gravity: 'southwest'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    namingPattern:'{dir}{name}-800{ext}',
-    methods: [
-      {
-        name: 'resize',
-        args: [ null, 800 ]
-      },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/watermark-M.png',
-          {
-            gravity: 'southwest'
-          }
-        ]
-      }
-    ]
-  },{
-    namingPattern:'{dir}{name}-500{ext}',
-    methods: [
-      {
-        name: 'resize',
-        args: [ null, 500 ]
-      },
-      {
-        name: 'overlayWith',
-        args: [
-          './img/watermark-S.png',
-          {
-            gravity: 'southwest'
-          }
-        ]
-      }
-    ]
-  }],
-  layouts: {
-    directory: 'layouts',
-    engine: 'handlebars',
-    partials: 'partials'
-  },
-  writemetadata: {
-    pattern: ['**/*'],
-    ignorekeys: ['next','previous'],
-    bufferencoding: 'utf8'
-  },
-  debug: { // Use setting up an environment variable DEBUG=metalsmith:*
-    log: "first debug",      // any comment you like
-    metadata: true,         // default: true
-    source: false,           // default: true
-    destination: false,      // default: true
-    files: true,             // default: true
-    match: "**/*.md"         // default: all files
-  }
-};
+  sharp: [
+    {
+      namingPattern: '{dir}{name}-thumb{ext}',
+      methods: [
+        {
+          name: 'resize',
+          args: [ 400, 400 ]
+        }
+      ]
+    },
+    {
+      namingPattern:'{dir}{name}-1200{ext}',
+      methods: [
+        {
+          name: 'resize',
+          args: [ null, 1200 ]
+        },
+        {
+          name: 'overlayWith',
+          args: [
+            './img/watermark-L.png',
+            {
+              gravity: 'southwest'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      namingPattern:'{dir}{name}-800{ext}',
+      methods: [
+        {
+          name: 'resize',
+          args: [ null, 800 ]
+        },
+        {
+          name: 'overlayWith',
+          args: [
+            './img/watermark-M.png',
+            {
+              gravity: 'southwest'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      namingPattern:'{dir}{name}-500{ext}',
+      methods: [
+        {
+          name: 'resize',
+          args: [ null, 500 ]
+        },
+        {
+          name: 'overlayWith',
+          args: [
+            './img/watermark-S.png',
+            {
+              gravity: 'southwest'
+            }
+          ]
+        }
+      ]
+    }],
+    layouts: {
+      directory: 'layouts',
+      engine: 'handlebars',
+      partials: 'partials'
+    },
+    writemetadata: {
+      pattern: ['**/*'],
+      ignorekeys: ['next','previous'],
+      bufferencoding: 'utf8'
+    },
+    debug: { // Use setting up an environment variable DEBUG=metalsmith:*
+      log: "first debug",      // any comment you like
+      metadata: true,         // default: true
+      source: false,           // default: true
+      destination: false,      // default: true
+      files: true,             // default: true
+      match: "**/*.md"         // default: all files
+    }
+  };
 
-module.exports = metalsmithConf;
+  module.exports = metalsmithConf;

@@ -1,5 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=BenchNine:700&subset=latin-ext');
+@import "../bower_components/pure/base.css";
+@import "../bower_components/pure/grids-core.css";
+@import "../bower_components/pure/grids-responsive.css";
 
 /* custom properties */
 :root {
@@ -20,9 +23,7 @@
   };
 }
 
-.centered {
-  @apply --centered;
-}
+
 
 /* custom media queries */
 @custom-media --viewport-small (width <= 20rem);
@@ -43,12 +44,7 @@ body {
 }
 
 html,body {
-  &.home {
-    @media (--viewport-large) {
-      overflow: hidden;
-      position: absolute;
-    }
-  }
+
 }
 
 p {
@@ -65,8 +61,8 @@ p {
     width: 100%;
     display: block;
     z-index: 10;
-    position: fixed;
     top: 0;
+    position: relative;
 
     @media (--viewport-medium) {
       position: relative;
@@ -143,36 +139,24 @@ p {
 
   .image-container {
     clear: both;
-    height: calc(100vh - var(--headerHeight) );
-    display: flex;
     position: relative;
     margin: 0;
-    top: var(--headerHeight);
     box-sizing: border-box;
-
-    @media (--viewport-medium) {
-      flex-direction: column;
-      top: 0;
-    }
-
-    @media (--viewport-large) {
-      padding: 0 5em calc(var(--globalMargin)*2.5) 0;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: stretch;
-      align-items: flex-start;
-      &:hover {
-        cursor: grab;
-      }
-    }
+    width: 100%;
 
     .image {
-      width: auto;
       margin: 0;
       box-sizing: border-box;
       position: relative;
-
+      @media (--viewport-medium) {
+        width: 100%;
+      }
+      @media (--viewport-large) {
+        overflow: hidden;
+        max-height: 400px;
+      }
       .image-title {
+        word-spacing: normal;
         position: absolute;
         display:block;
         top:0;
@@ -180,13 +164,14 @@ p {
         background-color: rgba(0,0,0,0.5);
         color: white;
         text-decoration: none;
-        padding: 0  var(--globalMargin);
         box-sizing: border-box;
         text-align: right;
+        padding: .3em .4em 0;
 
         @media (--viewport-large) {
           opacity: 0;
           transition: opacity .3s ease;
+          font-size: .8em;
           &:hover {
             color: color(var(--highlightColor) lightness(80%));
           }
@@ -195,7 +180,6 @@ p {
         @media (--viewport-medium) {
           font-size: .7em;
           line-height: 1.6em;
-          padding: 0 var(--globalMargin);
         }
       }
 
@@ -208,18 +192,9 @@ p {
 
       img {
         width: 100%;
-        @media (--viewport-large) {
-          width: auto;
-          height: 100%;
-          pointer-events: none;
-        }
-      }
-      @media (--viewport-medium) {
-        margin: var(--globalMargin) 0;
-      }
-      @media (--viewport-large) {
-        height: 100%;
-        margin: var(--globalMargin) 0 var(--globalMargin) var(--globalMargin);
+        min-width: 400px;
+        height: auto;
+        min-height: 400px;
       }
     }
   }
@@ -238,7 +213,6 @@ p {
       width: 100%;
       height: auto;
       margin:0 ;
-      padding: var(--globalMargin) var(--globalMargin) 0 var(--globalMargin);
       img {
         width: 100%;
         max-width: 1200px;
