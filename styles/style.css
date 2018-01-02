@@ -217,6 +217,8 @@ p {
       img {
         width: 100%;
         max-width: 1200px;
+        min-width: initial;
+        min-height: initial;
         height: auto;
         pointer-events: initial;
       }
