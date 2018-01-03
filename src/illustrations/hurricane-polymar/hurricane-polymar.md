@@ -1,6 +1,6 @@
 ---
 layout: illustration.html
-title: Hurrican Polymar
+title: Hurricane Polymar
 date: 2014-04-10
 ---
 
