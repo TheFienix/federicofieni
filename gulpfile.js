@@ -44,8 +44,7 @@ gulp.task('css:build',['clean:css'],function(){
       },
     }]
   }))
-  .pipe(gulp.dest('docs/css'))
-  .pipe(gulp.dest('src'));
+  .pipe(gulp.dest('docs/css'));
 });
 
 gulp.task('css:dev',function () {
